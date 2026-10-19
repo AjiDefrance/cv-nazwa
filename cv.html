@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV Lengkap — Nazwa Anisa Salahudin</title>
+<meta name="description" content="CV lengkap Nazwa Anisa Salahudin — pendidikan, pengalaman, dan keahlian." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0e1b2c;
+    --navy-soft: #16283f;
+    --gold: #c9a24b;
+    --gold-light: #e6c87e;
+    --cream: #f7f4ee;
+    --white: #ffffff;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--cream); color: #2b2b2b; line-height: 1.7; }
+  ::selection { background: var(--gold); color: #fff; }
+  .ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+  nav {
+    position: sticky; top: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 6vw;
+    background: rgba(14, 27, 44, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 162, 75, 0.25);
+    z-index: 100;
+  }
+  nav .logo { font-family: var(--serif); color: #fff; font-size: 1.2rem; letter-spacing: 0.12em; }
+  nav .logo span { color: var(--gold); }
+  .nav-actions { display: flex; gap: 0.8rem; align-items: center; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    font-family: var(--sans); font-weight: 500;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    background: none;
+  }
+  .btn-gold { background: linear-gradient(135deg, var(--gold), #b08a35); color: #fff; border: 1px solid var(--gold); }
+  .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(201,162,75,0.35); }
+  .btn-ghost { border: 1px solid rgba(255,255,255,0.35); color: #e7ebf2; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); transform: translateY(-3px); }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 3.5rem 6vw 5rem; }
+
+  .cv-sheet {
+    background: var(--white);
+    box-shadow: 0 30px 70px rgba(14,27,44,0.15);
+    border-top: 4px solid var(--gold);
+    padding: 3rem clamp(1.5rem, 5vw, 3.5rem);
+  }
+
+  .cv-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.2rem;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(14,27,44,0.12);
+  }
+  .cv-photo {
+    position: relative;
+    width: 150px; height: 180px;
+    border: 1px solid rgba(201,162,75,0.55);
+    background: linear-gradient(150deg, #22395a, #16283f);
+    box-shadow: 0 16px 36px rgba(14,27,44,0.25);
+  }
+  .cv-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .cv-head h1 { font-family: var(--serif); color: var(--navy); font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; font-weight: 600; }
+  .cv-head .label { color: var(--gold); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.72rem; font-weight: 600; }
+  .cv-head .role { color: #565b64; font-weight: 300; font-size: 0.98rem; margin-top: 0.4rem; }
+  .cv-head .rule { width: 80px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin-top: 0.9rem; }
+
+  .cv-body { display: grid; grid-template-columns: 1fr 1.6fr; gap: 2.5rem; padding-top: 2.2rem; }
+  .cv-aside { background: linear-gradient(150deg, var(--navy), var(--navy-soft)); color: #dfe5ee; padding: 1.8rem; border-top: 3px solid var(--gold); }
+  .cv-main { min-width: 0; }
+
+  h2 {
+    font-family: var(--serif); color: var(--navy);
+    font-size: 1.25rem; font-weight: 600; margin-bottom: 1.3rem;
+  }
+  h2::after { content: ""; display: block; width: 55px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin-top: 0.55rem; }
+  .cv-aside h2 { color: #fff; }
+
+  .bio dl { display: grid; gap: 1rem; font-size: 0.88rem; }
+  .bio dt { color: var(--gold-light); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; }
+  .bio dd { color: #cdd5e1; }
+
+  .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; }
+  .skill-list span {
+    border: 1px solid rgba(201,162,75,0.5); color: #e9d9b4;
+    padding: 0.3rem 0.8rem; font-size: 0.72rem; letter-spacing: 0.06em;
+    background: rgba(201,162,75,0.1);
+  }
+
+  .cv-block { margin-bottom: 2.4rem; }
+  .cv-block:last-child { margin-bottom: 0; }
+
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(180deg, var(--gold), rgba(201,162,75,0.15)); }
+  .timeline-item { position: relative; padding-bottom: 1.5rem; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before { content: ""; position: absolute; left: -2rem; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2px solid var(--gold); box-shadow: 0 0 0 4px rgba(201,162,75,0.15); }
+  .timeline-item .year { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+  .timeline-item h3 { font-family: var(--serif); color: var(--navy); font-size: 1.05rem; font-weight: 600; }
+  .timeline-item p { color: #5b6069; font-size: 0.92rem; font-weight: 300; }
+
+  .exp { margin-bottom: 1.5rem; }
+  .exp:last-child { margin-bottom: 0; }
+  .exp h3 { font-family: var(--serif); color: var(--navy); font-size: 1.05rem; font-weight: 600; display: flex; gap: 0.6rem; align-items: baseline; }
+  .exp h3 .dot { width: 7px; height: 7px; background: var(--gold); flex-shrink: 0; align-self: center; }
+  .exp p { color: #5b6069; font-size: 0.93rem; font-weight: 300; margin-top: 0.3rem; }
+
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    color: var(--navy); text-decoration: none;
+    font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+    margin-bottom: 1.6rem;
+    transition: color 0.3s;
+  }
+  .back-link:hover { color: var(--gold); }
+
+  footer { background: var(--navy); color: #93a0b3; text-align: center; padding: 2rem 6vw; font-size: 0.8rem; letter-spacing: 0.08em; border-top: 2px solid var(--gold); }
+  footer .gold { color: var(--gold-light); }
+
+  @media (max-width: 760px) {
+    .cv-body { grid-template-columns: 1fr; }
+    .cv-head { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .cv-head .rule { margin-left: auto; margin-right: auto; }
+    .nav-actions .btn-label-full { display: none; }
+  }
+  @media (max-width: 480px) {
+    .nav-actions .btn-ghost { display: none; }
+    .cv-photo { width: 130px; height: 156px; }
+  }
+
+  @media print {
+    nav, .back-link, .no-print, footer { display: none !important; }
+    body { background: #fff; }
+    .page { padding: 0; max-width: none; }
+    .cv-sheet { box-shadow: none; padding: 0; border-top: none; }
+    .cv-aside { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6h-2M8 14h8v7H8z"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+</svg>
+
+<nav>
+  <div class="logo">NAZWA<span>.</span>ANISA</div>
+  <div class="nav-actions no-print">
+    <a href="index.html" class="btn btn-ghost"><svg class="ico"><use href="#i-back"/></svg> <span class="btn-label-full">Beranda</span></a>
+    <button type="button" class="btn btn-gold js-download"><svg class="ico"><use href="#i-download"/></svg> Unduh PDF</button>
+    <button type="button" class="btn btn-ghost js-print" aria-label="Cetak CV"><svg class="ico"><use href="#i-print"/></svg></button>
+  </div>
+</nav>
+
+<div class="page">
+  <a href="index.html" class="back-link no-print"><svg class="ico"><use href="#i-back"/></svg> Kembali ke Beranda</a>
+
+  <article class="cv-sheet">
+    <header class="cv-head">
+      <div class="cv-photo">
+        <img src="foto-profil.jpeg" alt="Nazwa Anisa Salahudin" />
+      </div>
+      <div>
+        <p class="label">Curriculum Vitae</p>
+        <h1>Nazwa Anisa Salahudin</h1>
+        <p class="role">Siswa SMKN Sukaresik — Fokus pada Jaringan Komputer</p>
+        <div class="rule"></div>
+      </div>
+    </header>
+
+    <div class="cv-body">
+      <aside class="cv-aside">
+        <div class="bio">
+          <h2>Biodata</h2>
+          <dl>
+            <div>
+              <dt>Nama Lengkap</dt>
+              <dd>Nazwa Anisa Salahudin</dd>
+            </div>
+            <div>
+              <dt>Tempat, Tanggal Lahir</dt>
+              <dd>Jakarta, 06 Januari 2009</dd>
+            </div>
+            <div>
+              <dt>Alamat</dt>
+              <dd>KP Pasantren, Kecamatan Sukaresik, Kabupaten Tasikmalaya</dd>
+            </div>
+            <div>
+              <dt>Pendidikan</dt>
+              <dd>SMKN Sukaresik (Sedang Berjalan)</dd>
+            </div>
+            <div>
+              <dt>Minat</dt>
+              <dd>Jaringan komputer &amp; administrasi sistem</dd>
+            </div>
+          </dl>
+          <div class="skill-list">
+            <span>Konfigurasi MikroTik</span>
+            <span>Perancangan Topologi</span>
+            <span>Microsoft Excel</span>
+            <span>Pengelolaan Data Jaringan</span>
+            <span>Dasar TCP/IP</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="cv-main">
+        <section class="cv-block">
+          <h2>Tentang Saya</h2>
+          <p style="color:#4a4f58; font-weight:300; font-size:0.96rem;">
+            Saya seorang pelajar yang memiliki minat besar pada dunia jaringan komputer dan administrasi sistem.
+            Melalui pembelajaran di sekolah dan praktik mandiri, saya terbiasa mengkonfigurasi perangkat MikroTik
+            serta merancang topologi jaringan dari perencanaan hingga dokumentasi. Saya terbiasa bekerja
+            secara sistematis, teliti, dan tidak mudah menyerah ketika menghadapi kendala teknis.
+          </p>
+        </section>
+
+        <section class="cv-block">
+          <h2>Pendidikan</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="year">Sedang Berjalan</span>
+              <h3>SMKN Sukaresik</h3>
+              <p>Sekolah Menengah Kejuruan — memperdalam bidang teknologi informasi dan jaringan komputer melalui praktik langsung di laboratorium.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">Selesai</span>
+              <h3>SMPN Sukaresik</h3>
+              <p>Sekolah Menengah Pertama Negeri — menyelesaikan pendidikan tingkat menengah dengan pembelajaran dasar sains dan teknologi.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="year">Selesai</span>
+              <h3>SDN 2 Sukaratu</h3>
+              <p>Sekolah Dasar Negeri — menempuh pendidikan dasar dan membangun fondasi akademik.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cv-block">
+          <h2>Pengalaman &amp; Proyek</h2>
+          <div class="exp">
+            <h3><span class="dot"></span> Mengkonfigurasi MikroTik</h3>
+            <p>Melakukan konfigurasi dasar router MikroTik meliputi pengaturan IP address, DHCP server, NAT, dan firewall rule untuk kebutuhan jaringan lokal.</p>
+          </div>
+          <div class="exp">
+            <h3><span class="dot"></span> Membuat Topologi Jaringan</h3>
+            <p>Merancang dan menyusun topologi jaringan secara sistematis, mulai dari penentuan posisi perangkat, pengalamatan IP, hingga alur koneksi antar host.</p>
+          </div>
+          <div class="exp">
+            <h3><span class="dot"></span> Kemampuan Microsoft Excel</h3>
+            <p>Menggunakan Microsoft Excel untuk mendokumentasikan data jaringan, seperti inventarisasi perangkat, daftar alamat IP, dan rekap konfigurasi secara rapi.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</div>
+
+<footer>
+  &copy; 2026 <span class="gold">Nazwa Anisa Salahudin</span> — Curriculum Vitae. All rights reserved.
+</footer>
+
+<script src="cv-pdf.js"></script>
+</body>
+</html>

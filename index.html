@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV — Nazwa Anisa Salahudin</title>
+<meta name="description" content="Curriculum Vitae Nazwa Anisa Salahudin — Siswa SMKN Sukaresik, fokus jaringan komputer & MikroTik." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  .ico { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .ico-fill { fill: currentColor; stroke: none; }
+</style>
+<style>
+  :root {
+    --navy: #0e1b2c;
+    --navy-soft: #16283f;
+    --charcoal: #2b2b2b;
+    --gold: #c9a24b;
+    --gold-light: #e6c87e;
+    --cream: #f7f4ee;
+    --white: #ffffff;
+    --muted: #8a93a3;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--gold); color: var(--white); }
+
+  /* ---------- Navbar ---------- */
+  nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 6vw;
+    background: rgba(14, 27, 44, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(201, 162, 75, 0.25);
+  }
+  nav .logo {
+    font-family: var(--serif);
+    color: var(--white);
+    font-size: 1.25rem;
+    letter-spacing: 0.12em;
+  }
+  nav .logo span { color: var(--gold); }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
+  nav ul a {
+    color: #d7dce5;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  nav ul a:hover { color: var(--gold-light); }
+  .nav-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 1.3rem; cursor: pointer; }
+
+  /* ---------- Hero ---------- */
+  header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(ellipse at 15% 20%, rgba(201,162,75,0.10), transparent 55%),
+      radial-gradient(ellipse at 85% 80%, rgba(201,162,75,0.07), transparent 50%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 60%, #1d3350 100%);
+    position: relative;
+    padding: 8rem 6vw 5rem;
+  }
+  /* geometric watermark */
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,162,75,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,162,75,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-text .greeting {
+    color: var(--gold-light);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .hero-text h1 {
+    font-family: var(--serif);
+    color: var(--white);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+  }
+  .gold-rule {
+    width: 90px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 1.2rem 0;
+  }
+  .hero-text .role {
+    color: #c5cddb;
+    font-weight: 300;
+    font-size: 1.05rem;
+    max-width: 46ch;
+  }
+  .hero-btns { display: flex; gap: 1rem; margin-top: 2.2rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.35s ease;
+    font-weight: 500;
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold), #b08a35);
+    color: var(--white);
+    border: 1px solid var(--gold);
+  }
+  .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(201,162,75,0.35); }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #e7ebf2;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); transform: translateY(-3px); }
+  .btn-ghost-dark {
+    border: 1px solid rgba(14,27,44,0.3);
+    color: var(--navy);
+  }
+  .btn-ghost-dark:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+  .contact-note {
+    font-size: 0.84rem;
+    color: #6b7280;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+  #formNote {
+    margin-top: 0;
+    padding: 0.8rem 1rem;
+    background: rgba(201,162,75,0.12);
+    border-left: 3px solid var(--gold);
+    color: var(--navy);
+  }
+
+  /* photo */
+  .hero-photo { display: flex; justify-content: center; }
+  .photo-frame {
+    position: relative;
+    width: min(280px, 70vw);
+    aspect-ratio: 3 / 3.6;
+    background: linear-gradient(150deg, #22395a, #16283f);
+    border: 1px solid rgba(201,162,75,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+  }
+  .photo-frame::before {
+    content: "";
+    position: absolute;
+    inset: -14px 14px 14px -14px;
+    border: 1px solid rgba(201,162,75,0.35);
+    z-index: -1;
+  }
+  .photo-frame .ico { width: 5rem; height: 5rem; color: rgba(201,162,75,0.6); stroke-width: 1.2; }
+  .photo-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .photo-initials {
+    position: absolute;
+    bottom: -18px;
+    right: -18px;
+    background: linear-gradient(135deg, var(--gold), #b08a35);
+    color: var(--white);
+    font-family: var(--serif);
+    padding: 0.55rem 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 6rem 6vw; position: relative; }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .section-label {
+    color: var(--gold);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--navy);
+    margin: 0.5rem 0 2.8rem;
+    font-weight: 600;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin-top: 0.8rem;
+  }
+
+  /* About */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3.5rem; align-items: start; }
+  .about-card {
+    background: linear-gradient(150deg, var(--navy), var(--navy-soft));
+    color: #dfe5ee;
+    padding: 2.2rem;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 20px 45px rgba(14,27,44,0.18);
+  }
+  .about-card h3 {
+    font-family: var(--serif);
+    color: var(--white);
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+    font-weight: 500;
+  }
+  .about-card dl { display: grid; gap: 1rem; font-size: 0.92rem; }
+  .about-card dt { color: var(--gold-light); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; }
+  .about-card dd { color: #cdd5e1; }
+  .about-text p { color: #4a4f58; font-weight: 300; font-size: 1.02rem; margin-bottom: 1.2rem; }
+  .skills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
+  .skill-tag {
+    border: 1px solid rgba(201,162,75,0.55);
+    color: var(--navy);
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    background: rgba(201,162,75,0.08);
+  }
+
+  /* Timeline */
+  #education { background: var(--cream); }
+  .timeline { position: relative; padding-left: 2.4rem; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px; top: 6px; bottom: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold), rgba(201,162,75,0.15));
+  }
+  .timeline-item { position: relative; padding-bottom: 2.4rem; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2.4rem; top: 6px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 0 5px rgba(201,162,75,0.15);
+  }
+  .timeline-item h4 {
+    font-family: var(--serif);
+    color: var(--navy);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .timeline-item .year {
+    color: var(--gold);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .timeline-item p { color: #5b6069; font-size: 0.95rem; font-weight: 300; }
+
+  /* Experience cards */
+  #experience { background: linear-gradient(160deg, var(--navy), #1a2f4b); }
+  #experience .section-title { color: var(--white); }
+  #experience .section-label { color: var(--gold-light); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+  .card {
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(201,162,75,0.25);
+    backdrop-filter: blur(8px);
+    padding: 2.2rem 1.8rem;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.35);
+  }
+  .card .icon {
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    margin-bottom: 1.4rem;
+  }
+  .card .icon .ico { width: 1.4rem; height: 1.4rem; color: var(--gold-light); }
+  .card h4 {
+    font-family: var(--serif);
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+  }
+  .card p { color: #a9b4c4; font-size: 0.9rem; font-weight: 300; }
+
+  /* Contact */
+  #contact { background: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3.5rem; }
+  .contact-info p { color: #565b64; font-weight: 300; margin-bottom: 1.8rem; }
+  .contact-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+    font-size: 0.92rem;
+    color: var(--navy);
+  }
+  .contact-line .ico {
+    width: 40px; height: 40px;
+    padding: 9px;
+    box-sizing: border-box;
+    border: 1px solid rgba(201,162,75,0.5);
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .socials { display: flex; gap: 0.8rem; margin-top: 2rem; }
+  .socials a {
+    width: 42px; height: 42px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(14,27,44,0.25);
+    color: var(--navy);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .socials a:hover { background: var(--gold); border-color: var(--gold); color: var(--white); transform: translateY(-4px); }
+
+  form { display: grid; gap: 1.1rem; }
+  form input, form textarea {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid rgba(14,27,44,0.18);
+    background: var(--cream);
+    color: var(--charcoal);
+    border-radius: 2px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    resize: vertical;
+  }
+  form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201,162,75,0.15);
+  }
+  form button { justify-self: start; cursor: pointer; font-family: var(--sans); }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    color: #93a0b3;
+    text-align: center;
+    padding: 2.2rem 6vw;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    border-top: 2px solid var(--gold);
+  }
+  footer .gold { color: var(--gold-light); }
+
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(34px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+    .hero-text .gold-rule { margin-left: auto; margin-right: auto; }
+    .hero-btns { justify-content: center; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    nav ul {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: rgba(14,27,44,0.97);
+      padding: 1.4rem 6vw 1.8rem;
+      gap: 1.2rem;
+      display: none;
+      border-bottom: 1px solid rgba(201,162,75,0.25);
+    }
+    nav ul.open { display: flex; }
+    .nav-toggle { display: block; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6h-2M8 14h8v7H8z"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-envelope" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M14 9h4M14 13h4M6 16c.6-1.5 1.7-2 3-2s2.4.5 3 2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 20h16v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6Z"/><path d="M4 16c1.5 0 1.5 1.5 3 1.5S8.5 16 10 16s1.5 1.5 3 1.5S14.5 16 16 16s1.5 1.5 3 1.5"/><path d="M12 9V6M9.5 4.5C9.5 3.7 10.6 3 12 3s2.5.7 2.5 1.5"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="m12 4 10 5-10 5L2 9l10-5Z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z"/><path d="M8.8 9c.4 2.4 2.8 4.8 5.2 5.2l1-1.4 1.7.8c-.3 1.2-1.5 1.6-2.6 1.3-2.6-.7-5.3-3.4-6-6-.3-1.1.1-2.3 1.3-2.6l.8 1.7-1.4 1"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m21 3-10 10M21 3l-6.5 18-4-8-8-4L21 3Z"/></symbol>
+  <symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10M15 10v10"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 20h20"/></symbol>
+</svg>
+
+<nav>
+  <div class="logo">NAZWA<span>.</span>ANISA</div>
+  <button class="nav-toggle" id="navToggle" aria-label="Buka menu"><svg class="ico"><use href="#i-bars"/></svg></button>
+  <ul id="navMenu">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="#about">Tentang Saya</a></li>
+    <li><a href="#education">Pendidikan</a></li>
+    <li><a href="#experience">Pengalaman</a></li>
+    <li><a href="#contact">Kontak</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="greeting">Curriculum Vitae</p>
+      <h1>Nazwa Anisa<br />Salahudin</h1>
+      <div class="gold-rule"></div>
+      <p class="role">Siswa SMKN Sukaresik yang antusias di bidang jaringan komputer — terampil mengkonfigurasi MikroTik, merancang topologi, dan mendokumentasikan data jaringan secara sistematis.</p>
+      <div class="hero-btns">
+        <a href="cv.html" class="btn btn-gold"><svg class="ico"><use href="#i-id"/></svg> Lihat CV Lengkap</a>
+        <button type="button" class="btn btn-ghost js-download" id="downloadCv"><svg class="ico"><use href="#i-download"/></svg> Unduh CV PDF</button>
+        <a href="#contact" class="btn btn-ghost"><svg class="ico"><use href="#i-envelope"/></svg> Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <img src="foto-profil.jpeg" alt="Nazwa Anisa Salahudin" />
+        <div class="photo-initials">NA</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <p class="section-label reveal">Profil</p>
+    <h2 class="section-title reveal">Tentang Saya</h2>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <h3>Biodata</h3>
+        <dl>
+          <div>
+            <dt>Nama Lengkap</dt>
+            <dd>Nazwa Anisa Salahudin</dd>
+          </div>
+          <div>
+            <dt>Tempat, Tanggal Lahir</dt>
+            <dd>Jakarta, 06 Januari 2009</dd>
+          </div>
+          <div>
+            <dt>Alamat</dt>
+            <dd>KP Pasantren, Kecamatan Sukaresik, Kabupaten Tasikmalaya</dd>
+          </div>
+          <div>
+            <dt>Pendidikan</dt>
+            <dd>SMKN Sukaresik (Sedang Berjalan)</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="about-text reveal">
+        <p>Saya seorang pelajar yang memiliki minat besar pada dunia jaringan komputer dan administrasi sistem. Melalui pembelajaran di sekolah dan praktik mandiri, saya terbiasa mengkonfigurasi perangkat MikroTik serta merancang topologi jaringan dari perencanaan sampai dokumentasi.</p>
+        <p>Saya terbiasa bekerja secara sistematis, teliti, dan tidak mudah menyerah ketika menghadapi kendala teknis. Saya juga nyaman bekerja dalam tim maupun secara mandiri untuk menyelesaikan tugas praktikum dan proyek jaringan.</p>
+        <div class="skills">
+          <span class="skill-tag">Konfigurasi MikroTik</span>
+          <span class="skill-tag">Perancangan Topologi</span>
+          <span class="skill-tag">Microsoft Excel</span>
+          <span class="skill-tag">Pengelolaan Data Jaringan</span>
+          <span class="skill-tag">Dasar TCP/IP</span>
+        </div>
+        <a href="cv.html" class="btn btn-gold" style="margin-top:1.8rem;"><svg class="ico"><use href="#i-id"/></svg> Lihat CV Lengkap</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <p class="section-label reveal">Riwayat</p>
+    <h2 class="section-title reveal">Pendidikan</h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <span class="year">Sedang Berjalan</span>
+        <h4>SMKN Sukaresik</h4>
+        <p>Sekolah Menengah Kejuruan — memperdalam bidang teknologi informasi dan jaringan komputer melalui praktik langsung di laboratorium.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="year">Selesai</span>
+        <h4>SMPN Sukaresik</h4>
+        <p>Sekolah Menengah Pertama Negeri — menyelesaikan pendidikan tingkat menengah dengan pembelajaran dasar sains dan teknologi.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="year">Selesai</span>
+        <h4>SDN 2 Sukaratu</h4>
+        <p>Sekolah Dasar Negeri — menempuh pendidikan dasar dan membangun fondasi akademik.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <p class="section-label reveal">Portofolio</p>
+    <h2 class="section-title reveal">Pengalaman &amp; Proyek</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="icon"><svg class="ico"><use href="#i-network"/></svg></div>
+        <h4>Mengkonfigurasi MikroTik</h4>
+        <p>Melakukan konfigurasi dasar router MikroTik meliputi pengaturan IP address, DHCP server, NAT, dan firewall rule untuk kebutuhan jaringan lokal.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg class="ico"><use href="#i-network"/></svg></div>
+        <h4>Membuat Topologi Jaringan</h4>
+        <p>Merancang dan menyusun topologi jaringan secara sistematis, mulai dari penentuan posisi perangkat, pengalamatan IP, hingga alur koneksi antar host.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg class="ico"><use href="#i-table"/></svg></div>
+        <h4>Kemampuan Microsoft Excel</h4>
+        <p>Menggunakan Microsoft Excel untuk mendokumentasikan data jaringan, seperti inventarisasi perangkat, daftar alamat IP, dan rekap konfigurasi secara rapi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label reveal">Terhubung</p>
+    <h2 class="section-title reveal">Kontak</h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p>Silakan hubungi saya untuk kerja sama, magang, atau sekadar berdiskusi seputar jaringan komputer.</p>
+        <div class="contact-line"><svg class="ico"><use href="#i-pin"/></svg> KP Pasantren, Kec. Sukaresik, Kab. Tasikmalaya</div>
+        <div class="contact-line"><svg class="ico"><use href="#i-cake"/></svg> Jakarta, 06 Januari 2009</div>
+        <div class="contact-line"><svg class="ico"><use href="#i-cap"/></svg> SMKN Sukaresik</div>
+        <p class="contact-note">Media sosial akan ditautkan bila sudah tersedia. Untuk saat ini, CV dapat diunduh dalam format PDF melalui tombol di bawah.</p>
+        <button type="button" class="btn btn-ghost-dark js-download"><svg class="ico"><use href="#i-download"/></svg> Unduh CV PDF</button>
+      </div>
+      <form class="reveal" id="contactForm">
+        <input type="text" name="nama" placeholder="Nama Anda" required />
+        <input type="email" name="email" placeholder="Email Anda" required />
+        <textarea rows="5" name="pesan" placeholder="Tulis pesan Anda..." required></textarea>
+        <button type="submit" class="btn btn-gold"><svg class="ico"><use href="#i-send"/></svg> Siapkan Pesan</button>
+        <p class="contact-note" id="formNote" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 <span class="gold">Nazwa Anisa Salahudin</span> — Curriculum Vitae. All rights reserved.
+</footer>
+
+<script src="cv-pdf.js"></script>
+<script>
+  // Mobile nav
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form kontak: tidak mengirim data ke server mana pun (situs statis).
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const note = document.getElementById('formNote');
+      note.hidden = false;
+      note.textContent = 'Pesan belum terkirim — formulir ini belum terhubung ke layanan email. Silakan unduh CV melalui tombol "Unduh CV PDF" atau hubungi saya melalui SMKN Sukaresik.';
+      contactForm.reset();
+    });
+  }
+</script>
+
+</body>
+</html>
